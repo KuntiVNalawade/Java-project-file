@@ -1,0 +1,58 @@
+1.Write a program to accept a paragraph from the user and remove all the spaces from it.
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	char str[50]
+	int i, j
+	printf("Enter any string : ");
+	gets(str);
+	i=0;
+	while(str[i] != '\0')
+	{
+		if(str[i] == 32)
+		{
+			j=i;
+			while(str[j] != '\0')
+			{
+				str[j] = str[j+1];
+				j++;
+			}
+			i--;
+		}
+		i++;
+	}
+	printf("Updated String is : %s", str);
+}
+
+2. Write a program to declare an array of size 20. And accept 19 elements for it. Now accept 20th element from the user and also accept the index-number where user wants to place it.
+Now you have to perform insert operation of that 20th element at specified index number. Make sure that any existing (old 19) element must not get overwrite.
+#include<stdio.h>
+void main()
+{
+	int a[20], i, ind, num;
+	printf("Enter 19 values\n");
+    for(i=0; i<=18; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+    printf("Enter NEW element to insert : ");
+    scanf("%d", &num);
+    printf("Enter the index number where you want to insert this NEW element : ");
+    scanf("%d", &ind);
+    // shifting element one RHS
+    for(i=18; i>=ind; i--)
+    {
+        a[i+1] = a[i];
+    }
+    a[ind] = num;
+    printf("Updated array elements are\n");
+    for(i=0; i<=19; i++)
+    {
+        printf("%d\n", a[i]);
+    }
+}
+
+
+
+	
